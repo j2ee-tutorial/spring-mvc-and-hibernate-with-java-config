@@ -15,16 +15,10 @@
 <body>
 
 <header>
-    <div>
-        <a href="${pageContext.request.contextPath}/product/list?lang=en">En</a>
-        <a href="${pageContext.request.contextPath}/product/list?lang=fa">Fa</a>
-    </div>
-
-    <h1><spring:message code="products"/> </h1>
+    <h1>Products</h1>
 </header>
 
 <main>
-    <%=request.getParameter("lang")%>
     ${message}
 
     <table>
@@ -45,7 +39,6 @@
     </table>
 
     <a href="${pageContext.request.contextPath}/product/entry">Add</a>
-
 </main>
 
 <footer>

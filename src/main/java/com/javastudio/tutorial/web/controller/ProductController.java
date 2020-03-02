@@ -31,13 +31,6 @@ public class ProductController {
         return "product/insert";
     }
 
-    // @RequestMapping(value = "/entry", method = RequestMethod.GET)
-    public ModelAndView entry(HttpServletRequest request, HttpServletResponse response) {
-        ModelAndView view = new ModelAndView("product/insert");
-        view.addObject("product", new Product());
-        return view;
-    }
-
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public String save(@Valid @ModelAttribute Product product, BindingResult validation, Model model) {
         logger.info("Saving product");

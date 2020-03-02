@@ -1,14 +1,14 @@
 package com.javastudio.tutorial.web.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.logging.Logger;
 
 @Controller
 public class HomeController {
 
-    Logger logger = Logger.getLogger(HomeController.class.getName());
+    Logger logger = LoggerFactory.getLogger(HomeController.class);
 
     @RequestMapping("/")
     public String home() {
