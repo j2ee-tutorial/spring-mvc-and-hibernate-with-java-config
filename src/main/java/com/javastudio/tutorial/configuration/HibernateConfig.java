@@ -24,6 +24,9 @@ public class HibernateConfig {
     @Autowired
     private ApplicationContext context;
 
+    @Autowired
+    SessionFactory sessionFactory;
+
     @Bean("sessionFactory")
     public LocalSessionFactoryBean getSessionFactory() {
         LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
@@ -35,7 +38,7 @@ public class HibernateConfig {
     @Bean
     public HibernateTransactionManager getTransactionManager() {
         HibernateTransactionManager transactionManager = new HibernateTransactionManager();
-        transactionManager.setSessionFactory(getSessionFactory().getObject());
+        transactionManager.setSessionFactory(sessionFactory);
         return transactionManager;
     }
 }
